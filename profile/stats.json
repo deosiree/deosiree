@@ -1,0 +1,145 @@
+{
+  "updated_at": "2026-11-03 11:31 UTC+8",
+  "summary": {
+    "merged_prs": 2
+  },
+  "merged_prs_truncated": false,
+  "merged_prs": [
+    {
+      "title": "Auto optimize/i18n locale layout 20260611",
+      "number": 2,
+      "repository": "deosiree/cursor-config",
+      "repository_url": "https://github.com/deosiree/cursor-config",
+      "html_url": "https://github.com/deosiree/cursor-config/pull/2",
+      "merged_at": "2026-06-12T12:03:17Z"
+    },
+    {
+      "title": "Auto optimize/20260716 001",
+      "number": 1,
+      "repository": "deosiree/cursor-config",
+      "repository_url": "https://github.com/deosiree/cursor-config",
+      "html_url": "https://github.com/deosiree/cursor-config/pull/1",
+      "merged_at": "2026-05-31T23:46:52Z"
+    }
+  ],
+  "owned_repositories": [
+    {
+      "name": "cursor-config",
+      "full_name": "deosiree/cursor-config",
+      "html_url": "https://github.com/deosiree/cursor-config",
+      "description": "",
+      "language": "Vue",
+      "stars": 2,
+      "updated_at": "2026-10-28T02:53:31Z"
+    },
+    {
+      "name": "copilot-custom-prompts",
+      "full_name": "deosiree/copilot-custom-prompts",
+      "html_url": "https://github.com/deosiree/copilot-custom-prompts",
+      "description": "",
+      "language": "",
+      "stars": 1,
+      "updated_at": "2026-10-28T02:56:03Z"
+    },
+    {
+      "name": "copilot-custom-prompts-skills",
+      "full_name": "deosiree/copilot-custom-prompts-skills",
+      "html_url": "https://github.com/deosiree/copilot-custom-prompts-skills",
+      "description": "obsidian的copilot的prompt",
+      "language": "",
+      "stars": 1,
+      "updated_at": "2026-10-28T02:55:59Z"
+    },
+    {
+      "name": "deosiree.github.io",
+      "full_name": "deosiree/deosiree.github.io",
+      "html_url": "https://github.com/deosiree/deosiree.github.io",
+      "description": "我的个人博客",
+      "language": "HTML",
+      "stars": 1,
+      "updated_at": "2026-10-28T02:56:54Z"
+    },
+    {
+      "name": "deosiree.github.io.2.x",
+      "full_name": "deosiree/deosiree.github.io.2.x",
+      "html_url": "https://github.com/deosiree/deosiree.github.io.2.x",
+      "description": "",
+      "language": "HTML",
+      "stars": 1,
+      "updated_at": "2026-10-28T02:56:45Z"
+    },
+    {
+      "name": "fe-learn-code",
+      "full_name": "deosiree/fe-learn-code",
+      "html_url": "https://github.com/deosiree/fe-learn-code",
+      "description": "来自https://github.com/Bigerfe/fe-learn-code/",
+      "language": "",
+      "stars": 1,
+      "updated_at": "2026-10-28T02:58:04Z"
+    },
+    {
+      "name": "newAPIshare",
+      "full_name": "deosiree/newAPIshare",
+      "html_url": "https://github.com/deosiree/newAPIshare",
+      "description": "",
+      "language": "Python",
+      "stars": 1,
+      "updated_at": "2026-10-28T02:55:16Z"
+    },
+    {
+      "name": "ng15_study",
+      "full_name": "deosiree/ng15_study",
+      "html_url": "https://github.com/deosiree/ng15_study",
+      "description": "Angular15框架的学习",
+      "language": "",
+      "stars": 1,
+      "updated_at": "2026-10-28T02:58:15Z"
+    },
+    {
+      "name": "requirements-pool",
+      "full_name": "deosiree/requirements-pool",
+      "html_url": "https://github.com/deosiree/requirements-pool",
+      "description": "需求缓冲池管理系统",
+      "language": "JavaScript",
+      "stars": 1,
+      "updated_at": "2026-10-28T02:58:41Z"
+    },
+    {
+      "name": "translationtool",
+      "full_name": "deosiree/translationtool",
+      "html_url": "https://github.com/deosiree/translationtool",
+      "description": "词条翻译工具",
+      "language": "Vue",
+      "stars": 1,
+      "updated_at": "2026-10-28T02:53:05Z"
+    },
+    {
+      "name": "angular-test",
+      "full_name": "deosiree/angular-test",
+      "html_url": "https://github.com/deosiree/angular-test",
+      "description": "Created with StackBlitz ⚡️",
+      "language": "TypeScript",
+      "stars": 0,
+      "updated_at": "2023-05-30T02:55:33Z"
+    },
+    {
+      "name": "my-ai-agents",
+      "full_name": "deosiree/my-ai-agents",
+      "html_url": "https://github.com/deosiree/my-ai-agents",
+      "description": "",
+      "language": "Python",
+      "stars": 0,
+      "updated_at": "2026-05-03T14:27:51Z"
+    },
+    {
+      "name": "my-rag-study",
+      "full_name": "deosiree/my-rag-study",
+      "html_url": "https://github.com/deosiree/my-rag-study",
+      "description": "",
+      "language": "Python",
+      "stars": 0,
+      "updated_at": "2026-05-06T06:33:09Z"
+    }
+  ],
+  "external_contributions": []
+}

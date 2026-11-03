@@ -1,10 +1,13 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/deosiree/deosiree/main/assets/open-source-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/deosiree/deosiree/main/assets/open-source-light.svg">
-    <img src="https://raw.githubusercontent.com/deosiree/deosiree/main/assets/open-source-light.svg" alt="deosiree 的公开仓库与开源贡献统计" width="100%">
-  </picture>
-</p>
+# 惠岩 · @deosiree
+
+构建 Coding Agent，持续向deer-flow、dspy、dify等一线 AI 开源仓库贡献代码。
+
+2024 届 南京邮电大学 计算机科学硕士，2年传统开发工作经验，专注 Agent Harness / 安全管理 / 记忆系统
+
+<!-- profile-stats:start -->
+
+**已合并 PR：2** · [打开交互统计页 ↗](https://deosiree.github.io/deosiree/) · [查看已合并 PR ↗](https://github.com/search?q=is%3Apr+is%3Amerged+author%3Adeosiree&type=pullrequests) · [更新记录 ↗](https://github.com/deosiree/deosiree/actions/workflows/update-profile.yml)
+<!-- profile-stats:end -->
 
 ## 精选项目
 
@@ -17,8 +20,4 @@
 | [my-rag-study](https://github.com/deosiree/my-rag-study) | Python |
 | [my-ai-agents](https://github.com/deosiree/my-ai-agents) | Python |
 
-<details>
-  <summary>统计口径</summary>
-
-  统计仅使用公开 GitHub 数据。原创仓库数和 Stars 不包含 fork 或本资料仓库；合并 PR 按作者统计，并区分个人仓库与其他账号的仓库。数据卡片由 GitHub Actions 每日更新。
-</details>
+统计仅使用公开 GitHub 数据；项目 Stars 表示各仓库获得的 Star 数。

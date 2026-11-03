@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>惠岩 · GitHub 统计页视觉预览</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --canvas: #ffffff;
+      --ink: #24292f;
+      --muted: #656d76;
+      --line: #d8dee4;
+      --soft: #f6f8fa;
+      --accent: #7357c8;
+      --accent-soft: #f2efff;
+      --focus: #0969da;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --canvas: #0d1117;
+        --ink: #e6edf3;
+        --muted: #919ba6;
+        --line: #30363d;
+        --soft: #161b22;
+        --accent: #b09aff;
+        --accent-soft: #211d32;
+        --focus: #58a6ff;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--focus);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      color: inherit;
+      font: inherit;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    .page {
+      width: min(100% - 40px, 920px);
+      margin: 0 auto;
+      padding: 44px 0 28px;
+    }
+
+    .topline,
+    .metric-row,
+    .record,
+    .footer,
+    .project-row,
+    .contribution-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .topline {
+      padding-bottom: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .intro {
+      padding: 20px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.2;
+      overflow-wrap: anywhere;
+    }
+
+    .handle {
+      color: var(--muted);
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    .signature {
+      margin: 16px 0 0;
+      color: var(--muted);
+    }
+
+    .signature p {
+      margin: 4px 0;
+      overflow-wrap: anywhere;
+    }
+
+    .summary {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .metric-label,
+    .metric-caption {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .metric-row {
+      justify-content: flex-start;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .metric-value {
+      color: var(--ink);
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .summary-link {
+      margin-left: auto;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 28px;
+      min-height: 52px;
+      overflow-x: auto;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tab {
+      position: relative;
+      flex: 0 0 auto;
+      min-height: 52px;
+      padding: 12px 0;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .tab[aria-selected="true"] {
+      border-bottom-color: var(--accent);
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .tab-count {
+      margin-left: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .panel {
+      padding: 22px 0 16px;
+    }
+
+    .panel[hidden] {
+      display: none;
+    }
+
+    .panel-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .sample-note,
+    .panel-summary {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .records {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .record,
+    .project-row,
+    .contribution-row {
+      min-height: 66px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .record-main,
+    .project-main,
+    .contribution-main {
+      display: grid;
+      min-width: 0;
+      gap: 2px;
+    }
+
+    .repo {
+      color: var(--muted);
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .record-title,
+    .project-name,
+    .contribution-name {
+      color: var(--ink);
+      font-weight: 600;
+      overflow-wrap: anywhere;
+    }
+
+    .record time,
+    .project-meta,
+    .contribution-count {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: right;
+    }
+
+    .footer {
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        width: min(100% - 28px, 920px);
+        padding-top: 24px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .handle {
+        display: block;
+        font-size: 18px;
+      }
+
+      .tabs {
+        gap: 20px;
+      }
+
+      .record,
+      .project-row,
+      .contribution-row {
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .record time,
+      .project-meta,
+      .contribution-count {
+        max-width: 34%;
+      }
+
+      .footer {
+        display: grid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="topline">
+      <span class="eyebrow">Open source / Contributions</span>
+      <a href="https://github.com/deosiree" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </div>
+
+    <header class="intro">
+      <h1>惠岩 <span class="handle">· @deosiree</span></h1>
+      <div class="signature">
+        <p>构建 Coding Agent，持续向deer-flow、dspy、dify等一线 AI 开源仓库贡献代码。</p>
+        <p>2024 届 南京邮电大学 计算机科学硕士，2年传统开发工作经验，专注 Agent Harness / 安全管理 / 记忆系统</p>
+      </div>
+    </header>
+
+    <section class="summary" aria-label="已合并 PR 统计">
+      <div class="metric-label">已合并 PR</div>
+      <div class="metric-row">
+        <strong class="metric-value">--</strong>
+        <span class="metric-caption">公开记录</span>
+        <a class="summary-link" href="https://github.com/search?q=is%3Apr+is%3Amerged+author%3Adeosiree&amp;type=pullrequests" target="_blank" rel="noopener noreferrer">查看已合并 PR ↗</a>
+      </div>
+    </section>
+
+    <nav class="tabs" role="tablist" aria-label="统计分类">
+      <button class="tab" id="tab-merged" type="button" role="tab" aria-selected="true" aria-controls="panel-merged" tabindex="0" data-tab="merged">合并 PR <span class="tab-count">--</span></button>
+      <button class="tab" id="tab-projects" type="button" role="tab" aria-selected="false" aria-controls="panel-projects" tabindex="-1" data-tab="projects">我的项目 <span class="tab-count">--</span></button>
+      <button class="tab" id="tab-external" type="button" role="tab" aria-selected="false" aria-controls="panel-external" tabindex="-1" data-tab="external">外部贡献 <span class="tab-count">--</span></button>
+    </nav>
+
+    <section class="panel" id="panel-merged" role="tabpanel" aria-labelledby="tab-merged" tabindex="0" data-panel="merged">
+      <div class="panel-heading">
+        <h2>已合并 Pull Request</h2>
+        <span class="sample-note">视觉预览 · 示例内容</span>
+      </div>
+      <ol class="records">
+        <li class="record">
+          <div class="record-main">
+            <a class="repo" href="https://github.com/deosiree" target="_blank" rel="noopener noreferrer">owner/repo</a>
+            <a class="record-title" href="https://github.com/deosiree" target="_blank" rel="noopener noreferrer">示例 PR 标题 #123 ↗</a>
+          </div>
+          <time>YYYY-MM-DD</time>
+        </li>
+        <li class="record">
+          <div class="record-main">
+            <a class="repo" href="https://github.com/deosiree" target="_blank" rel="noopener noreferrer">owner/repo</a>
+            <a class="record-title" href="https://github.com/deosiree" target="_blank" rel="noopener noreferrer">示例 PR 标题 #456 ↗</a>
+          </div>
+          <time>YYYY-MM-DD</time>
+        </li>
+      </ol>
+    </section>
+
+    <section class="panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" tabindex="0" data-panel="projects" hidden>
+      <div class="panel-heading">
+        <h2>我的公开项目</h2>
+        <span class="sample-note">视觉预览 · 示例内容</span>
+      </div>
+      <ul class="records">
+        <li class="project-row">
+          <div class="project-main">
+            <a class="project-name" href="https://github.com/deosiree" target="_blank" rel="noopener noreferrer">示例项目 ↗</a>
+            <span class="repo">项目描述与主要语言</span>
+          </div>
+          <span class="project-meta">该仓库获 Star · --</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="panel" id="panel-external" role="tabpanel" aria-labelledby="tab-external" tabindex="0" data-panel="external" hidden>
+      <div class="panel-heading">
+        <h2>其他账号仓库的贡献</h2>
+        <span class="sample-note">视觉预览 · 示例内容</span>
+      </div>
+      <ul class="records">
+        <li class="contribution-row">
+          <div class="contribution-main">
+            <a class="contribution-name" href="https://github.com/deosiree" target="_blank" rel="noopener noreferrer">owner/repo ↗</a>
+            <a class="repo" href="https://github.com/deosiree" target="_blank" rel="noopener noreferrer">最近合并的 PR 标题 ↗</a>
+          </div>
+          <span class="contribution-count">-- 个 PR</span>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <span>更新时间：原型示意 · 数据仅展示布局</span>
+      <div class="footer-links">
+        <a href="https://github.com/deosiree/deosiree/actions/workflows/update-profile.yml" target="_blank" rel="noopener noreferrer">更新记录 ↗</a>
+        <a href="https://github.com/search?q=is%3Apr+is%3Amerged+author%3Adeosiree&amp;type=pullrequests" target="_blank" rel="noopener noreferrer">查看全部已合并 PR ↗</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const tablist = document.querySelector('[role="tablist"]');
+    const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+    const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+
+    /**
+     * Activate one statistics tab and its associated panel.
+     * @param {HTMLButtonElement} selectedTab Tab button to activate.
+     * @param {boolean} focusTab Whether to move keyboard focus to the tab.
+     * @returns {void}
+     */
+    function activateTab(selectedTab, focusTab) {
+      for (const tab of tabs) {
+        const isSelected = tab === selectedTab;
+        tab.setAttribute("aria-selected", String(isSelected));
+        tab.tabIndex = isSelected ? 0 : -1;
+      }
+
+      for (const panel of panels) {
+        panel.hidden = panel.id !== selectedTab.getAttribute("aria-controls");
+      }
+
+      if (focusTab) {
+        selectedTab.focus();
+      }
+    }
+
+    /**
+     * Handle pointer activation for the tablist.
+     * @param {MouseEvent} event Click event from the tablist.
+     * @returns {void}
+     */
+    function handleTabClick(event) {
+      if (!(event.target instanceof Element)) {
+        return;
+      }
+      const selectedTab = event.target.closest('[role="tab"]');
+      if (selectedTab) {
+        activateTab(selectedTab, false);
+      }
+    }
+
+    /**
+     * Support arrow, Home, and End navigation between tabs.
+     * @param {KeyboardEvent} event Keyboard event from the tablist.
+     * @returns {void}
+     */
+    function handleTabKeydown(event) {
+      const currentIndex = tabs.indexOf(document.activeElement);
+      if (currentIndex < 0) {
+        return;
+      }
+
+      let nextIndex = currentIndex;
+      if (event.key === "ArrowRight") {
+        nextIndex = (currentIndex + 1) % tabs.length;
+      } else if (event.key === "ArrowLeft") {
+        nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+      } else if (event.key === "Home") {
+        nextIndex = 0;
+      } else if (event.key === "End") {
+        nextIndex = tabs.length - 1;
+      } else {
+        return;
+      }
+
+      event.preventDefault();
+      activateTab(tabs[nextIndex], true);
+    }
+
+    tablist.addEventListener("click", handleTabClick);
+    tablist.addEventListener("keydown", handleTabKeydown);
+  </script>
+</body>
+</html>

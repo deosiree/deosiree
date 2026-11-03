@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="惠岩的 GitHub 开源项目与合并 PR 统计">
+  <title>惠岩 · 开源贡献</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <div class="topline">
+      <span class="eyebrow">Open source / Contributions</span>
+      <a class="top-link" href="https://github.com/deosiree" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </div>
+
+    <header class="intro">
+      <h1>惠岩 <span class="handle">· @deosiree</span></h1>
+      <div class="signature">
+        <p>构建 Coding Agent，持续向deer-flow、dspy、dify等一线 AI 开源仓库贡献代码。</p>
+        <p>2024 届 南京邮电大学 计算机科学硕士，2年传统开发工作经验，专注 Agent Harness / 安全管理 / 记忆系统</p>
+      </div>
+    </header>
+
+    <section class="summary" aria-label="已合并 PR 统计">
+      <div class="metric-label">已合并 PR</div>
+      <div class="metric-row">
+        <strong class="metric-value" id="merged-count">--</strong>
+        <span class="metric-caption">公开记录</span>
+        <a class="summary-link" href="https://github.com/search?q=is%3Apr+is%3Amerged+author%3Adeosiree&amp;type=pullrequests" target="_blank" rel="noopener noreferrer">查看已合并 PR ↗</a>
+      </div>
+    </section>
+
+    <nav class="tabs" role="tablist" aria-label="统计分类">
+      <button class="tab" id="tab-merged" type="button" role="tab" aria-selected="true" aria-controls="panel-merged" tabindex="0" data-tab="merged_prs">
+        合并 PR <span class="tab-count" id="count-merged">--</span>
+      </button>
+      <button class="tab" id="tab-projects" type="button" role="tab" aria-selected="false" aria-controls="panel-projects" tabindex="-1" data-tab="owned_repositories">
+        我的项目 <span class="tab-count" id="count-projects">--</span>
+      </button>
+      <button class="tab" id="tab-external" type="button" role="tab" aria-selected="false" aria-controls="panel-external" tabindex="-1" data-tab="external_contributions">
+        外部贡献 <span class="tab-count" id="count-external">--</span>
+      </button>
+    </nav>
+
+    <p class="load-state" id="load-state" role="status" aria-live="polite">正在加载公开统计…</p>
+
+    <section class="panel" id="panel-merged" role="tabpanel" aria-labelledby="tab-merged" tabindex="0">
+      <div class="panel-heading">
+        <div>
+          <h2>已合并 Pull Request</h2>
+          <p class="panel-summary" id="merged-summary"></p>
+        </div>
+      </div>
+      <ol class="records" id="merged-list"></ol>
+      <div class="pagination" id="merged-pagination" hidden>
+        <button class="pagination-button" id="previous-page" type="button" data-page-action="previous" aria-label="上一页">←</button>
+        <span class="page-label" id="page-label"></span>
+        <button class="pagination-button" id="next-page" type="button" data-page-action="next" aria-label="下一页">→</button>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" tabindex="0" hidden>
+      <div class="panel-heading">
+        <div>
+          <h2>我的公开项目</h2>
+          <p class="panel-summary">Stars 为各仓库自身获得的 Star 数</p>
+        </div>
+      </div>
+      <ul class="records" id="projects-list"></ul>
+    </section>
+
+    <section class="panel" id="panel-external" role="tabpanel" aria-labelledby="tab-external" tabindex="0" hidden>
+      <div class="panel-heading">
+        <div>
+          <h2>其他账号仓库的贡献</h2>
+          <p class="panel-summary">按仓库汇总公开已合并 PR</p>
+        </div>
+      </div>
+      <ul class="records" id="external-list"></ul>
+    </section>
+
+    <footer class="footer">
+      <span>公开 GitHub 数据 · 更新时间：<time id="updated-at">--</time></span>
+      <div class="footer-links">
+        <a href="https://github.com/deosiree/deosiree/actions/workflows/update-profile.yml" target="_blank" rel="noopener noreferrer">更新记录 ↗</a>
+        <a href="https://github.com/search?q=is%3Apr+is%3Amerged+author%3Adeosiree&amp;type=pullrequests" target="_blank" rel="noopener noreferrer">查看全部已合并 PR ↗</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

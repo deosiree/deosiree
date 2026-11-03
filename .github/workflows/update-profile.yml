@@ -1,31 +1,54 @@
-name: Update profile statistics
+name: Update profile statistics and deploy Pages
 
 on:
+  push:
+    branches: [main]
   schedule:
     - cron: "17 0 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: profile-pages
+  cancel-in-progress: true
 
 jobs:
-  update-profile-card:
+  update-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out profile repository
         uses: actions/checkout@v7
 
-      - name: Generate contribution cards
+      - name: Generate profile data
         run: python scripts/generate_stats.py
 
-      - name: Commit updated cards
+      - name: Commit updated profile data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- assets/open-source-light.svg assets/open-source-dark.svg; then
-            echo "Statistics unchanged"
-            exit 0
+          if git diff --quiet -- README.md profile/stats.json; then
+            echo "Profile statistics unchanged"
+          else
+            git add README.md profile/stats.json
+            git commit -m "chore: refresh profile statistics"
+            git push
           fi
-          git add assets/open-source-light.svg assets/open-source-dark.svg
-          git commit -m "chore: refresh profile statistics"
-          git push
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: profile
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
