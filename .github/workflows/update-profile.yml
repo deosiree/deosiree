@@ -33,10 +33,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- README.md profile/stats.json; then
+          if git diff --quiet -- README.md profile/stats.json profile/overview.svg; then
             echo "Profile statistics unchanged"
           else
-            git add README.md profile/stats.json
+            git add README.md profile/stats.json profile/overview.svg
             git commit -m "chore: refresh profile statistics"
             git push
           fi

@@ -15,6 +15,7 @@ LOGIN = "deosiree"
 API_ROOT = "https://api.github.com"
 ROOT = Path(__file__).resolve().parents[1]
 PROFILE_DATA = ROOT / "profile" / "stats.json"
+OVERVIEW_IMAGE = ROOT / "profile" / "overview.svg"
 PAGES_URL = "https://deosiree.github.io/deosiree/"
 PULL_REQUESTS_URL = (
     "https://github.com/search?q=is%3Apr+is%3Amerged+author%3Adeosiree"
@@ -261,6 +262,71 @@ def write_stats(stats: dict) -> None:
     )
 
 
+def render_overview_svg(stats: dict) -> str:
+    """Render the linked static cover image shown in the profile README.
+
+    @param stats: Aggregated public profile statistics.
+    @returns: Standalone SVG markup for the GitHub profile overview.
+    """
+    merged_count = int(stats["summary"]["merged_prs"])
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title description">
+  <title id="title">惠岩 · @deosiree | Coding Agent Builder</title>
+  <desc id="description">AI systems engineering focused on agent harnesses, security, and memory. Click through to the interactive contribution dashboard.</desc>
+  <rect width="1200" height="420" fill="#101216"/>
+  <rect width="8" height="420" fill="#d4ff70"/>
+  <rect x="8" y="0" width="1192" height="72" fill="#15181d"/>
+  <text x="48" y="45" fill="#d4ff70" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700">HY / ENGINEERING PROFILE</text>
+  <text x="1152" y="45" text-anchor="end" fill="#aeb5bf" font-family="Segoe UI, sans-serif" font-size="12">AI SYSTEMS · OPEN SOURCE</text>
+  <line x1="48" y1="72" x2="1152" y2="72" stroke="#30353d"/>
+
+  <text x="48" y="151" fill="#f3f4f6" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="58" font-weight="700">惠岩</text>
+  <text x="207" y="147" fill="#aeb5bf" font-family="Segoe UI, sans-serif" font-size="20">@deosiree</text>
+  <text x="48" y="194" fill="#d4ff70" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">BUILDING CODING AGENTS</text>
+  <text x="48" y="231" fill="#e5e7eb" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="18">构建 Coding Agent，持续参与一线 AI 开源项目。</text>
+  <text x="48" y="260" fill="#aeb5bf" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="15">从 Harness、安全边界到记忆系统，让 Agent 更可靠。</text>
+
+  <line x1="48" y1="294" x2="666" y2="294" stroke="#30353d"/>
+  <text x="48" y="321" fill="#818995" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700">ENGINEERING FOCUS</text>
+  <rect x="48" y="339" width="184" height="34" rx="3" fill="#1a1e24" stroke="#3a414a"/>
+  <rect x="48" y="339" width="3" height="34" fill="#d4ff70"/>
+  <text x="64" y="361" fill="#f3f4f6" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">AGENT HARNESS</text>
+  <rect x="244" y="339" width="158" height="34" rx="3" fill="#1a1e24" stroke="#3a414a"/>
+  <rect x="244" y="339" width="3" height="34" fill="#ff8068"/>
+  <text x="260" y="361" fill="#f3f4f6" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">SECURITY</text>
+  <rect x="414" y="339" width="188" height="34" rx="3" fill="#1a1e24" stroke="#3a414a"/>
+  <rect x="414" y="339" width="3" height="34" fill="#78c7ff"/>
+  <text x="430" y="361" fill="#f3f4f6" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">MEMORY SYSTEMS</text>
+
+  <rect x="708" y="103" width="444" height="270" rx="4" fill="#14171c" stroke="#343a43"/>
+  <text x="738" y="137" fill="#818995" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700">SYSTEMS I WORK ON</text>
+  <line x1="738" y1="155" x2="1122" y2="155" stroke="#30353d"/>
+  <text x="738" y="190" fill="#d4ff70" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700">01</text>
+  <text x="778" y="190" fill="#f3f4f6" font-family="Segoe UI, sans-serif" font-size="15" font-weight="600">Agent Harness</text>
+  <text x="778" y="211" fill="#8b929d" font-family="Segoe UI, sans-serif" font-size="12">Runtime · orchestration · evaluation</text>
+  <line x1="738" y1="226" x2="1122" y2="226" stroke="#30353d"/>
+  <text x="738" y="261" fill="#ff8068" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700">02</text>
+  <text x="778" y="261" fill="#f3f4f6" font-family="Segoe UI, sans-serif" font-size="15" font-weight="600">Security</text>
+  <text x="778" y="282" fill="#8b929d" font-family="Segoe UI, sans-serif" font-size="12">Policy · permissions · safe execution</text>
+  <line x1="738" y1="297" x2="1122" y2="297" stroke="#30353d"/>
+  <text x="738" y="332" fill="#78c7ff" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700">03</text>
+  <text x="778" y="332" fill="#f3f4f6" font-family="Segoe UI, sans-serif" font-size="15" font-weight="600">Memory Systems</text>
+
+  <rect x="8" y="389" width="1192" height="31" fill="#d4ff70"/>
+  <text x="48" y="410" fill="#101216" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700">{merged_count:02d} MERGED PRs · PUBLIC GITHUB DATA</text>
+  <text x="1152" y="410" text-anchor="end" fill="#101216" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700">OPEN INTERACTIVE DASHBOARD ↗</text>
+</svg>
+'''
+
+
+def write_overview_svg(stats: dict) -> None:
+    """Write the generated profile cover image used by the README.
+
+    @param stats: Aggregated public profile statistics.
+    @returns: None.
+    """
+    OVERVIEW_IMAGE.write_text(render_overview_svg(stats), encoding="utf-8")
+
+
 def main() -> None:
     """Fetch public GitHub data and update the README and Pages data file.
 
@@ -271,6 +337,7 @@ def main() -> None:
     pull_requests, total_pr_count = load_merged_pull_requests()
     stats = summarize(repositories, pull_requests, total_pr_count)
     write_stats(stats)
+    write_overview_svg(stats)
     update_readme(stats)
     print(
         "Updated profile stats: "
