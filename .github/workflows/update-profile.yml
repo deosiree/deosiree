@@ -1,0 +1,31 @@
+name: Update profile statistics
+
+on:
+  schedule:
+    - cron: "17 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-profile-card:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@v7
+
+      - name: Generate contribution cards
+        run: python scripts/generate_stats.py
+
+      - name: Commit updated cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- assets/open-source-light.svg assets/open-source-dark.svg; then
+            echo "Statistics unchanged"
+            exit 0
+          fi
+          git add assets/open-source-light.svg assets/open-source-dark.svg
+          git commit -m "chore: refresh profile statistics"
+          git push
