@@ -6,16 +6,16 @@
   </picture>
 </p>
 
-## 近期项目
+## 精选项目
 
-| 项目 | 技术 | 仓库说明 |
-| --- | --- | --- |
-| [requirements-pool](https://github.com/deosiree/requirements-pool) | JavaScript | 需求缓冲池管理系统 |
-| [translationtool](https://github.com/deosiree/translationtool) | Vue | 词条翻译工具 |
-| [cursor-config](https://github.com/deosiree/cursor-config) | Vue | - |
-| [deosiree.github.io](https://github.com/deosiree/deosiree.github.io) | HTML | 我的个人博客 |
-| [my-rag-study](https://github.com/deosiree/my-rag-study) | Python | - |
-| [my-ai-agents](https://github.com/deosiree/my-ai-agents) | Python | - |
+| 项目 | 技术 |
+| --- | --- |
+| [requirements-pool](https://github.com/deosiree/requirements-pool) | JavaScript |
+| [translationtool](https://github.com/deosiree/translationtool) | Vue |
+| [cursor-config](https://github.com/deosiree/cursor-config) | Vue |
+| [deosiree.github.io](https://github.com/deosiree/deosiree.github.io) | HTML |
+| [my-rag-study](https://github.com/deosiree/my-rag-study) | Python |
+| [my-ai-agents](https://github.com/deosiree/my-ai-agents) | Python |
 
 <details>
   <summary>统计口径</summary>
