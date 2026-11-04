@@ -11,7 +11,7 @@
 
 <!-- profile-stats:start -->
 
-**已合并 PR：2** · [打开交互统计页 ↗](https://deosiree.github.io/deosiree/) · [查看已合并 PR ↗](https://github.com/search?q=is%3Apr+is%3Amerged+author%3Adeosiree&type=pullrequests) · [更新记录 ↗](https://github.com/deosiree/deosiree/actions/workflows/update-profile.yml)
+**已合并 PR：2** · [打开交互统计页 ↗](https://deosiree.github.io/deosiree/) · [查看 GitHub PR 搜索 ↗](https://github.com/search?q=is%3Apr+is%3Amerged+author%3Adeosiree&type=pullrequests) · [更新记录 ↗](https://github.com/deosiree/deosiree/actions/workflows/update-profile.yml)
 <!-- profile-stats:end -->
 
 ## SELECTED WORK · 精选项目
@@ -55,4 +55,6 @@
   </tr>
 </table>
 
-<p align="center"><sub>公开 GitHub 数据 · 每日自动更新</sub></p>
+<!-- profile-update:start -->
+<p align="center"><sub>公开 GitHub 数据 · 每日自动更新 · 最近数据生成（北京时间）：2026-11-04 22:14</sub></p>
+<!-- profile-update:end -->

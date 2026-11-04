@@ -27,6 +27,8 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Generate profile data
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: python scripts/generate_stats.py
 
       - name: Commit updated profile data

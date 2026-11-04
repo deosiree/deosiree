@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import os
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.error import HTTPError, URLError
@@ -26,6 +27,8 @@ WORKFLOW_URL = (
 )
 README_START = "<!-- profile-stats:start -->"
 README_END = "<!-- profile-stats:end -->"
+README_UPDATE_START = "<!-- profile-update:start -->"
+README_UPDATE_END = "<!-- profile-update:end -->"
 SEARCH_RESULT_LIMIT = 1000
 UTC_PLUS_EIGHT = timezone(timedelta(hours=8))
 
@@ -36,13 +39,17 @@ def request_json(path: str) -> dict | list:
     @param path: API path including its query string.
     @returns: Decoded JSON response.
     """
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "deosiree-profile-readme",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+    token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
     request = Request(
         f"{API_ROOT}{path}",
-        headers={
-            "Accept": "application/vnd.github+json",
-            "User-Agent": "deosiree-profile-readme",
-            "X-GitHub-Api-Version": "2022-11-28",
-        },
+        headers=headers,
     )
     try:
         with urlopen(request, timeout=30) as response:
@@ -70,12 +77,24 @@ def load_repositories() -> list[dict]:
         page += 1
 
 
-def load_merged_pull_requests() -> tuple[list[dict], int]:
+def load_merged_pull_requests(repositories: list[dict]) -> tuple[list[dict], int]:
     """Load public merged pull requests authored by the profile account.
 
+    Pull requests targeting repositories owned by the profile account are excluded.
+
+    @param repositories: Public repositories owned by the profile account.
     @returns: Search result records and GitHub's total matching count.
     """
-    query_text = f"is:pr is:merged author:{LOGIN}"
+    owned_repositories = sorted(
+        {
+            repository.get("full_name", "")
+            for repository in repositories
+            if repository.get("full_name", "").split("/", 1)[0].casefold()
+            == LOGIN.casefold()
+        }
+    )
+    exclusions = " ".join(f"-repo:{name}" for name in owned_repositories)
+    query_text = f"is:pr is:merged author:{LOGIN} {exclusions}".strip()
     pull_requests = []
     page = 1
     total_count = 0
@@ -88,12 +107,41 @@ def load_merged_pull_requests() -> tuple[list[dict], int]:
             raise RuntimeError("Unexpected response while searching pull requests")
         if page == 1:
             total_count = int(result.get("total_count", 0))
+            if total_count > SEARCH_RESULT_LIMIT:
+                raise RuntimeError(
+                    "Merged PR search exceeds GitHub's 1,000-result limit; "
+                    "cannot verify a complete public contribution count"
+                )
         items = result.get("items", [])
         pull_requests.extend(items)
         if len(items) < 100 or len(pull_requests) >= min(total_count, SEARCH_RESULT_LIMIT):
             break
         page += 1
-    return pull_requests, total_count
+    if len(pull_requests) != total_count:
+        raise RuntimeError(
+            f"Merged PR search incomplete: expected {total_count}, "
+            f"received {len(pull_requests)}"
+        )
+
+    public_pull_requests = []
+    repository_visibility = {}
+    for pull_request in pull_requests:
+        repository_url = pull_request.get("repository_url", "")
+        full_name = repository_url.rsplit("/repos/", 1)[-1]
+        if full_name.count("/") != 1:
+            continue
+        if full_name.split("/", 1)[0].casefold() == LOGIN.casefold():
+            continue
+        if full_name not in repository_visibility:
+            repository = request_json(f"/repos/{full_name}")
+            if not isinstance(repository, dict) or not isinstance(
+                repository.get("private"), bool
+            ):
+                raise RuntimeError(f"Unexpected repository visibility response: {full_name}")
+            repository_visibility[full_name] = not repository["private"]
+        if repository_visibility[full_name]:
+            public_pull_requests.append(pull_request)
+    return public_pull_requests, len(public_pull_requests)
 
 
 def pull_request_sort_key(pull_request: dict) -> tuple[str, str, int]:
@@ -128,7 +176,7 @@ def contribution_sort_key(contribution: dict) -> tuple[int, str]:
 
 
 def normalize_pull_requests(pull_requests: list[dict]) -> list[dict]:
-    """Normalize public search results into records for display.
+    """Normalize external-repository search results into records for display.
 
     @param pull_requests: Raw issue-search records for merged pull requests.
     @returns: Pull requests with repository, URL, title, number, and merge date.
@@ -138,6 +186,8 @@ def normalize_pull_requests(pull_requests: list[dict]) -> list[dict]:
         repository_url = pull_request.get("repository_url", "")
         full_name = repository_url.rsplit("/repos/", 1)[-1]
         if full_name.count("/") != 1:
+            continue
+        if full_name.split("/", 1)[0].casefold() == LOGIN.casefold():
             continue
         try:
             number = int(pull_request["number"])
@@ -170,7 +220,11 @@ def summarize(
     """
     owned_repositories = []
     for repository in repositories:
-        if repository.get("fork") or repository.get("name", "").casefold() == LOGIN:
+        if (
+            repository.get("private")
+            or repository.get("fork")
+            or repository.get("name", "").casefold() == LOGIN
+        ):
             continue
         owned_repositories.append(
             {
@@ -226,28 +280,44 @@ def summarize(
 
 
 def update_readme(stats: dict) -> None:
-    """Replace the marked README summary with the current merged PR count.
+    """Replace generated statistics and the visible data-generation timestamp.
 
     @param stats: Aggregated public profile statistics.
     @returns: None.
     """
     readme_path = ROOT / "README.md"
     content = readme_path.read_text(encoding="utf-8")
-    if content.count(README_START) != 1 or content.count(README_END) != 1:
-        raise RuntimeError("README must contain exactly one profile stats marker pair")
-    start = content.index(README_START) + len(README_START)
-    end = content.index(README_END)
-    if start > end:
-        raise RuntimeError("README profile stats markers are out of order")
-
     merged_count = stats["summary"]["merged_prs"]
-    block = (
+    stats_block = (
         f"\n\n**已合并 PR：{merged_count}** · "
         f"[打开交互统计页 ↗]({PAGES_URL}) · "
-        f"[查看已合并 PR ↗]({PULL_REQUESTS_URL}) · "
+        f"[查看 GitHub PR 搜索 ↗]({PULL_REQUESTS_URL}) · "
         f"[更新记录 ↗]({WORKFLOW_URL})\n"
     )
-    readme_path.write_text(content[:start] + block + content[end:], encoding="utf-8")
+    update_block = (
+        "\n<p align=\"center\"><sub>公开 GitHub 数据 · 每日自动更新 · "
+        f"最近数据生成（北京时间）：{stats['updated_at'].removesuffix(' UTC+8')}</sub></p>\n"
+    )
+    content = replace_marked_block(
+        content, README_START, README_END, stats_block, "profile stats"
+    )
+    content = replace_marked_block(
+        content, README_UPDATE_START, README_UPDATE_END, update_block, "profile update"
+    )
+    readme_path.write_text(content, encoding="utf-8")
+
+
+def replace_marked_block(
+    content: str, start_marker: str, end_marker: str, replacement: str, label: str
+) -> str:
+    """Replace the content between one unique, ordered marker pair."""
+    if content.count(start_marker) != 1 or content.count(end_marker) != 1:
+        raise RuntimeError(f"README must contain exactly one {label} marker pair")
+    start = content.index(start_marker) + len(start_marker)
+    end = content.index(end_marker)
+    if start > end:
+        raise RuntimeError(f"README {label} markers are out of order")
+    return content[:start] + replacement + content[end:]
 
 
 def write_stats(stats: dict) -> None:
@@ -334,7 +404,7 @@ def main() -> None:
     @returns: None.
     """
     repositories = load_repositories()
-    pull_requests, total_pr_count = load_merged_pull_requests()
+    pull_requests, total_pr_count = load_merged_pull_requests(repositories)
     stats = summarize(repositories, pull_requests, total_pr_count)
     write_stats(stats)
     write_overview_svg(stats)

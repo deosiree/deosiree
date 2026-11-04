@@ -1,25 +1,25 @@
 {
-  "updated_at": "2026-11-04 14:30 UTC+8",
+  "updated_at": "2026-11-04 22:14 UTC+8",
   "summary": {
     "merged_prs": 2
   },
   "merged_prs_truncated": false,
   "merged_prs": [
     {
-      "title": "Auto optimize/i18n locale layout 20260611",
-      "number": 2,
-      "repository": "deosiree/cursor-config",
-      "repository_url": "https://github.com/deosiree/cursor-config",
-      "html_url": "https://github.com/deosiree/cursor-config/pull/2",
-      "merged_at": "2026-06-12T12:03:17Z"
+      "title": "test(go-floor): compare install docs with full version precision",
+      "number": 6469,
+      "repository": "career-ops-hq/career-ops",
+      "repository_url": "https://github.com/career-ops-hq/career-ops",
+      "html_url": "https://github.com/career-ops-hq/career-ops/pull/6469",
+      "merged_at": "2026-11-04T10:31:01Z"
     },
     {
-      "title": "Auto optimize/20260716 001",
-      "number": 1,
-      "repository": "deosiree/cursor-config",
-      "repository_url": "https://github.com/deosiree/cursor-config",
-      "html_url": "https://github.com/deosiree/cursor-config/pull/1",
-      "merged_at": "2026-05-31T23:46:52Z"
+      "title": "Fix Dashboard TL;DR truncation for terminal width",
+      "number": 6470,
+      "repository": "career-ops-hq/career-ops",
+      "repository_url": "https://github.com/career-ops-hq/career-ops",
+      "html_url": "https://github.com/career-ops-hq/career-ops/pull/6470",
+      "merged_at": "2026-11-04T08:58:12Z"
     }
   ],
   "owned_repositories": [
@@ -141,5 +141,17 @@
       "updated_at": "2026-05-06T06:33:09Z"
     }
   ],
-  "external_contributions": []
+  "external_contributions": [
+    {
+      "full_name": "career-ops-hq/career-ops",
+      "html_url": "https://github.com/career-ops-hq/career-ops",
+      "merged_pr_count": 2,
+      "latest_pr": {
+        "title": "test(go-floor): compare install docs with full version precision",
+        "number": 6469,
+        "html_url": "https://github.com/career-ops-hq/career-ops/pull/6469",
+        "merged_at": "2026-11-04T10:31:01Z"
+      }
+    }
+  ]
 }
