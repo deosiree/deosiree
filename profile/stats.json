@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-11-05 14:52 UTC+8",
+  "updated_at": "2026-11-06 14:52 UTC+8",
   "summary": {
-    "merged_prs": 2
+    "merged_prs": 3
   },
   "merged_prs_truncated": false,
   "merged_prs": [
+    {
+      "title": "docs: explain cleanup for legacy sitemap skill copies",
+      "number": 2764,
+      "repository": "jackwener/OpenCLI",
+      "repository_url": "https://github.com/jackwener/OpenCLI",
+      "html_url": "https://github.com/jackwener/OpenCLI/pull/2764",
+      "merged_at": "2026-11-05T17:43:20Z"
+    },
     {
       "title": "test(go-floor): compare install docs with full version precision",
       "number": 6469,
@@ -151,6 +159,17 @@
         "number": 6469,
         "html_url": "https://github.com/career-ops-hq/career-ops/pull/6469",
         "merged_at": "2026-11-04T10:31:01Z"
+      }
+    },
+    {
+      "full_name": "jackwener/OpenCLI",
+      "html_url": "https://github.com/jackwener/OpenCLI",
+      "merged_pr_count": 1,
+      "latest_pr": {
+        "title": "docs: explain cleanup for legacy sitemap skill copies",
+        "number": 2764,
+        "html_url": "https://github.com/jackwener/OpenCLI/pull/2764",
+        "merged_at": "2026-11-05T17:43:20Z"
       }
     }
   ]
