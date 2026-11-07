@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-11-06 14:52 UTC+8",
+  "updated_at": "2026-11-07 14:03 UTC+8",
   "summary": {
-    "merged_prs": 3
+    "merged_prs": 4
   },
   "merged_prs_truncated": false,
   "merged_prs": [
+    {
+      "title": "fix: derive a per-install default worker port",
+      "number": 5425,
+      "repository": "thedotmack/claude-mem",
+      "repository_url": "https://github.com/thedotmack/claude-mem",
+      "html_url": "https://github.com/thedotmack/claude-mem/pull/5425",
+      "merged_at": "2026-11-06T17:55:18Z"
+    },
     {
       "title": "docs: explain cleanup for legacy sitemap skill copies",
       "number": 2764,
@@ -170,6 +178,17 @@
         "number": 2764,
         "html_url": "https://github.com/jackwener/OpenCLI/pull/2764",
         "merged_at": "2026-11-05T17:43:20Z"
+      }
+    },
+    {
+      "full_name": "thedotmack/claude-mem",
+      "html_url": "https://github.com/thedotmack/claude-mem",
+      "merged_pr_count": 1,
+      "latest_pr": {
+        "title": "fix: derive a per-install default worker port",
+        "number": 5425,
+        "html_url": "https://github.com/thedotmack/claude-mem/pull/5425",
+        "merged_at": "2026-11-06T17:55:18Z"
       }
     }
   ]
