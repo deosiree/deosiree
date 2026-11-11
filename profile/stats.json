@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-11-10 15:23 UTC+8",
+  "updated_at": "2026-11-11 14:30 UTC+8",
   "summary": {
-    "merged_prs": 4
+    "merged_prs": 5
   },
   "merged_prs_truncated": false,
   "merged_prs": [
+    {
+      "title": "fix: handle JSON-LD @type arrays in schema validation",
+      "number": 389,
+      "repository": "AgriciDaniel/claude-seo",
+      "repository_url": "https://github.com/AgriciDaniel/claude-seo",
+      "html_url": "https://github.com/AgriciDaniel/claude-seo/pull/389",
+      "merged_at": "2026-11-10T21:27:34Z"
+    },
     {
       "title": "fix: derive a per-install default worker port",
       "number": 5425,
@@ -167,6 +175,17 @@
         "number": 6469,
         "html_url": "https://github.com/career-ops-hq/career-ops/pull/6469",
         "merged_at": "2026-11-04T10:31:01Z"
+      }
+    },
+    {
+      "full_name": "AgriciDaniel/claude-seo",
+      "html_url": "https://github.com/AgriciDaniel/claude-seo",
+      "merged_pr_count": 1,
+      "latest_pr": {
+        "title": "fix: handle JSON-LD @type arrays in schema validation",
+        "number": 389,
+        "html_url": "https://github.com/AgriciDaniel/claude-seo/pull/389",
+        "merged_at": "2026-11-10T21:27:34Z"
       }
     },
     {
