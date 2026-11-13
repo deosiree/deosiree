@@ -1,10 +1,26 @@
 {
-  "updated_at": "2026-11-12 15:16 UTC+8",
+  "updated_at": "2026-11-13 14:49 UTC+8",
   "summary": {
-    "merged_prs": 5
+    "merged_prs": 7
   },
   "merged_prs_truncated": false,
   "merged_prs": [
+    {
+      "title": "fix(xlsx): wrap English text without breaking words",
+      "number": 620,
+      "repository": "iOfficeAI/OfficeCLI",
+      "repository_url": "https://github.com/iOfficeAI/OfficeCLI",
+      "html_url": "https://github.com/iOfficeAI/OfficeCLI/pull/620",
+      "merged_at": "2026-11-12T09:28:00Z"
+    },
+    {
+      "title": "fix: preserve completed parallel tool results",
+      "number": 3926,
+      "repository": "zhayujie/CowAgent",
+      "repository_url": "https://github.com/zhayujie/CowAgent",
+      "html_url": "https://github.com/zhayujie/CowAgent/pull/3926",
+      "merged_at": "2026-11-12T08:18:31Z"
+    },
     {
       "title": "fix: handle JSON-LD @type arrays in schema validation",
       "number": 389,
@@ -189,6 +205,17 @@
       }
     },
     {
+      "full_name": "iOfficeAI/OfficeCLI",
+      "html_url": "https://github.com/iOfficeAI/OfficeCLI",
+      "merged_pr_count": 1,
+      "latest_pr": {
+        "title": "fix(xlsx): wrap English text without breaking words",
+        "number": 620,
+        "html_url": "https://github.com/iOfficeAI/OfficeCLI/pull/620",
+        "merged_at": "2026-11-12T09:28:00Z"
+      }
+    },
+    {
       "full_name": "jackwener/OpenCLI",
       "html_url": "https://github.com/jackwener/OpenCLI",
       "merged_pr_count": 1,
@@ -208,6 +235,17 @@
         "number": 5425,
         "html_url": "https://github.com/thedotmack/claude-mem/pull/5425",
         "merged_at": "2026-11-06T17:55:18Z"
+      }
+    },
+    {
+      "full_name": "zhayujie/CowAgent",
+      "html_url": "https://github.com/zhayujie/CowAgent",
+      "merged_pr_count": 1,
+      "latest_pr": {
+        "title": "fix: preserve completed parallel tool results",
+        "number": 3926,
+        "html_url": "https://github.com/zhayujie/CowAgent/pull/3926",
+        "merged_at": "2026-11-12T08:18:31Z"
       }
     }
   ]
