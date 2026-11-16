@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-11-15 14:39 UTC+8",
+  "updated_at": "2026-11-16 14:35 UTC+8",
   "summary": {
-    "merged_prs": 7
+    "merged_prs": 8
   },
   "merged_prs_truncated": false,
   "merged_prs": [
+    {
+      "title": "fix(validate): detect missing overridden package parts",
+      "number": 613,
+      "repository": "iOfficeAI/OfficeCLI",
+      "repository_url": "https://github.com/iOfficeAI/OfficeCLI",
+      "html_url": "https://github.com/iOfficeAI/OfficeCLI/pull/613",
+      "merged_at": "2026-11-16T05:38:44Z"
+    },
     {
       "title": "fix(xlsx): wrap English text without breaking words",
       "number": 620,
@@ -194,6 +202,17 @@
       }
     },
     {
+      "full_name": "iOfficeAI/OfficeCLI",
+      "html_url": "https://github.com/iOfficeAI/OfficeCLI",
+      "merged_pr_count": 2,
+      "latest_pr": {
+        "title": "fix(validate): detect missing overridden package parts",
+        "number": 613,
+        "html_url": "https://github.com/iOfficeAI/OfficeCLI/pull/613",
+        "merged_at": "2026-11-16T05:38:44Z"
+      }
+    },
+    {
       "full_name": "AgriciDaniel/claude-seo",
       "html_url": "https://github.com/AgriciDaniel/claude-seo",
       "merged_pr_count": 1,
@@ -202,17 +221,6 @@
         "number": 389,
         "html_url": "https://github.com/AgriciDaniel/claude-seo/pull/389",
         "merged_at": "2026-11-10T21:27:34Z"
-      }
-    },
-    {
-      "full_name": "iOfficeAI/OfficeCLI",
-      "html_url": "https://github.com/iOfficeAI/OfficeCLI",
-      "merged_pr_count": 1,
-      "latest_pr": {
-        "title": "fix(xlsx): wrap English text without breaking words",
-        "number": 620,
-        "html_url": "https://github.com/iOfficeAI/OfficeCLI/pull/620",
-        "merged_at": "2026-11-12T09:28:00Z"
       }
     },
     {
