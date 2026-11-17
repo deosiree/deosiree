@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-11-17 19:22 UTC+8",
+  "updated_at": "2026-11-17 20:12 UTC+8",
   "summary": {
-    "merged_prs": 8
+    "merged_prs": 9
   },
   "merged_prs_truncated": false,
   "merged_prs": [
+    {
+      "title": "fix(memory): honor configured thinking for training extraction",
+      "number": 7478,
+      "repository": "volcengine/OpenViking",
+      "repository_url": "https://github.com/volcengine/OpenViking",
+      "html_url": "https://github.com/volcengine/OpenViking/pull/7478",
+      "merged_at": "2026-11-17T11:45:29Z"
+    },
     {
       "title": "fix(validate): detect missing overridden package parts",
       "number": 613,
@@ -243,6 +251,17 @@
         "number": 5425,
         "html_url": "https://github.com/thedotmack/claude-mem/pull/5425",
         "merged_at": "2026-11-06T17:55:18Z"
+      }
+    },
+    {
+      "full_name": "volcengine/OpenViking",
+      "html_url": "https://github.com/volcengine/OpenViking",
+      "merged_pr_count": 1,
+      "latest_pr": {
+        "title": "fix(memory): honor configured thinking for training extraction",
+        "number": 7478,
+        "html_url": "https://github.com/volcengine/OpenViking/pull/7478",
+        "merged_at": "2026-11-17T11:45:29Z"
       }
     },
     {
