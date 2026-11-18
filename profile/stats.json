@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-11-18 15:33 UTC+8",
+  "updated_at": "2026-11-18 19:16 UTC+8",
   "summary": {
-    "merged_prs": 9
+    "merged_prs": 10
   },
   "merged_prs_truncated": false,
   "merged_prs": [
+    {
+      "title": "fix(tui): bound terminal snapshot wait",
+      "number": 7360,
+      "repository": "codewhale-hq/Codewhale",
+      "repository_url": "https://github.com/codewhale-hq/Codewhale",
+      "html_url": "https://github.com/codewhale-hq/Codewhale/pull/7360",
+      "merged_at": "2026-11-18T10:10:21Z"
+    },
     {
       "title": "fix(memory): honor configured thinking for training extraction",
       "number": 7478,
@@ -229,6 +237,17 @@
         "number": 389,
         "html_url": "https://github.com/AgriciDaniel/claude-seo/pull/389",
         "merged_at": "2026-11-10T21:27:34Z"
+      }
+    },
+    {
+      "full_name": "codewhale-hq/Codewhale",
+      "html_url": "https://github.com/codewhale-hq/Codewhale",
+      "merged_pr_count": 1,
+      "latest_pr": {
+        "title": "fix(tui): bound terminal snapshot wait",
+        "number": 7360,
+        "html_url": "https://github.com/codewhale-hq/Codewhale/pull/7360",
+        "merged_at": "2026-11-18T10:10:21Z"
       }
     },
     {
