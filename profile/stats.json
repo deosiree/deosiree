@@ -1,10 +1,26 @@
 {
-  "updated_at": "2026-11-20 15:21 UTC+8",
+  "updated_at": "2026-11-21 15:14 UTC+8",
   "summary": {
-    "merged_prs": 10
+    "merged_prs": 12
   },
   "merged_prs_truncated": false,
   "merged_prs": [
+    {
+      "title": "docs(uz): fix quotes in lecture TypeScript examples",
+      "number": 93,
+      "repository": "walkinglabs/learn-harness-engineering",
+      "repository_url": "https://github.com/walkinglabs/learn-harness-engineering",
+      "html_url": "https://github.com/walkinglabs/learn-harness-engineering/pull/93",
+      "merged_at": "2026-11-21T05:34:01Z"
+    },
+    {
+      "title": "docs(stage8): broaden prompt injection sources",
+      "number": 378,
+      "repository": "WenyuChiou/awesome-agentic-ai-zh",
+      "repository_url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh",
+      "html_url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/378",
+      "merged_at": "2026-11-20T22:12:46Z"
+    },
     {
       "title": "fix(tui): bound terminal snapshot wait",
       "number": 7360,
@@ -281,6 +297,28 @@
         "number": 7478,
         "html_url": "https://github.com/volcengine/OpenViking/pull/7478",
         "merged_at": "2026-11-17T11:45:29Z"
+      }
+    },
+    {
+      "full_name": "walkinglabs/learn-harness-engineering",
+      "html_url": "https://github.com/walkinglabs/learn-harness-engineering",
+      "merged_pr_count": 1,
+      "latest_pr": {
+        "title": "docs(uz): fix quotes in lecture TypeScript examples",
+        "number": 93,
+        "html_url": "https://github.com/walkinglabs/learn-harness-engineering/pull/93",
+        "merged_at": "2026-11-21T05:34:01Z"
+      }
+    },
+    {
+      "full_name": "WenyuChiou/awesome-agentic-ai-zh",
+      "html_url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh",
+      "merged_pr_count": 1,
+      "latest_pr": {
+        "title": "docs(stage8): broaden prompt injection sources",
+        "number": 378,
+        "html_url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/378",
+        "merged_at": "2026-11-20T22:12:46Z"
       }
     },
     {
