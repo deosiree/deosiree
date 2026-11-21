@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-11-21 15:14 UTC+8",
+  "updated_at": "2026-11-21 19:19 UTC+8",
   "summary": {
-    "merged_prs": 12
+    "merged_prs": 13
   },
   "merged_prs_truncated": false,
   "merged_prs": [
+    {
+      "title": "Show request transmission on provider errors",
+      "number": 7448,
+      "repository": "codewhale-hq/Codewhale",
+      "repository_url": "https://github.com/codewhale-hq/Codewhale",
+      "html_url": "https://github.com/codewhale-hq/Codewhale/pull/7448",
+      "merged_at": "2026-11-21T10:11:21Z"
+    },
     {
       "title": "docs(uz): fix quotes in lecture TypeScript examples",
       "number": 93,
@@ -234,6 +242,17 @@
       }
     },
     {
+      "full_name": "codewhale-hq/Codewhale",
+      "html_url": "https://github.com/codewhale-hq/Codewhale",
+      "merged_pr_count": 2,
+      "latest_pr": {
+        "title": "Show request transmission on provider errors",
+        "number": 7448,
+        "html_url": "https://github.com/codewhale-hq/Codewhale/pull/7448",
+        "merged_at": "2026-11-21T10:11:21Z"
+      }
+    },
+    {
       "full_name": "iOfficeAI/OfficeCLI",
       "html_url": "https://github.com/iOfficeAI/OfficeCLI",
       "merged_pr_count": 2,
@@ -253,17 +272,6 @@
         "number": 389,
         "html_url": "https://github.com/AgriciDaniel/claude-seo/pull/389",
         "merged_at": "2026-11-10T21:27:34Z"
-      }
-    },
-    {
-      "full_name": "codewhale-hq/Codewhale",
-      "html_url": "https://github.com/codewhale-hq/Codewhale",
-      "merged_pr_count": 1,
-      "latest_pr": {
-        "title": "fix(tui): bound terminal snapshot wait",
-        "number": 7360,
-        "html_url": "https://github.com/codewhale-hq/Codewhale/pull/7360",
-        "merged_at": "2026-11-18T10:10:21Z"
       }
     },
     {
