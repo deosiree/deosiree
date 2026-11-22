@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-11-21 19:19 UTC+8",
+  "updated_at": "2026-11-22 14:55 UTC+8",
   "summary": {
-    "merged_prs": 13
+    "merged_prs": 14
   },
   "merged_prs_truncated": false,
   "merged_prs": [
+    {
+      "title": "docs(ch2): align experiment 2-4 command with frozen protocol",
+      "number": 1207,
+      "repository": "bojieli/ai-agent-book",
+      "repository_url": "https://github.com/bojieli/ai-agent-book",
+      "html_url": "https://github.com/bojieli/ai-agent-book/pull/1207",
+      "merged_at": "2026-11-22T02:24:51Z"
+    },
     {
       "title": "Show request transmission on provider errors",
       "number": 7448,
@@ -272,6 +280,17 @@
         "number": 389,
         "html_url": "https://github.com/AgriciDaniel/claude-seo/pull/389",
         "merged_at": "2026-11-10T21:27:34Z"
+      }
+    },
+    {
+      "full_name": "bojieli/ai-agent-book",
+      "html_url": "https://github.com/bojieli/ai-agent-book",
+      "merged_pr_count": 1,
+      "latest_pr": {
+        "title": "docs(ch2): align experiment 2-4 command with frozen protocol",
+        "number": 1207,
+        "html_url": "https://github.com/bojieli/ai-agent-book/pull/1207",
+        "merged_at": "2026-11-22T02:24:51Z"
       }
     },
     {
