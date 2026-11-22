@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-11-22 14:55 UTC+8",
+  "updated_at": "2026-11-22 19:18 UTC+8",
   "summary": {
-    "merged_prs": 14
+    "merged_prs": 15
   },
   "merged_prs_truncated": false,
   "merged_prs": [
+    {
+      "title": "修正第六章异步场景的措辞",
+      "number": 1219,
+      "repository": "bojieli/ai-agent-book",
+      "repository_url": "https://github.com/bojieli/ai-agent-book",
+      "html_url": "https://github.com/bojieli/ai-agent-book/pull/1219",
+      "merged_at": "2026-11-22T08:10:29Z"
+    },
     {
       "title": "docs(ch2): align experiment 2-4 command with frozen protocol",
       "number": 1207,
@@ -239,6 +247,17 @@
   ],
   "external_contributions": [
     {
+      "full_name": "bojieli/ai-agent-book",
+      "html_url": "https://github.com/bojieli/ai-agent-book",
+      "merged_pr_count": 2,
+      "latest_pr": {
+        "title": "修正第六章异步场景的措辞",
+        "number": 1219,
+        "html_url": "https://github.com/bojieli/ai-agent-book/pull/1219",
+        "merged_at": "2026-11-22T08:10:29Z"
+      }
+    },
+    {
       "full_name": "career-ops-hq/career-ops",
       "html_url": "https://github.com/career-ops-hq/career-ops",
       "merged_pr_count": 2,
@@ -280,17 +299,6 @@
         "number": 389,
         "html_url": "https://github.com/AgriciDaniel/claude-seo/pull/389",
         "merged_at": "2026-11-10T21:27:34Z"
-      }
-    },
-    {
-      "full_name": "bojieli/ai-agent-book",
-      "html_url": "https://github.com/bojieli/ai-agent-book",
-      "merged_pr_count": 1,
-      "latest_pr": {
-        "title": "docs(ch2): align experiment 2-4 command with frozen protocol",
-        "number": 1207,
-        "html_url": "https://github.com/bojieli/ai-agent-book/pull/1207",
-        "merged_at": "2026-11-22T02:24:51Z"
       }
     },
     {
