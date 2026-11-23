@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-11-23 15:44 UTC+8",
+  "updated_at": "2026-11-23 19:12 UTC+8",
   "summary": {
-    "merged_prs": 15
+    "merged_prs": 16
   },
   "merged_prs_truncated": false,
   "merged_prs": [
+    {
+      "title": "fix(shell): explain command screen refusals accurately",
+      "number": 314,
+      "repository": "HKUDS/DeepCode",
+      "repository_url": "https://github.com/HKUDS/DeepCode",
+      "html_url": "https://github.com/HKUDS/DeepCode/pull/314",
+      "merged_at": "2026-11-23T08:29:40Z"
+    },
     {
       "title": "修正第六章异步场景的措辞",
       "number": 1219,
@@ -299,6 +307,17 @@
         "number": 389,
         "html_url": "https://github.com/AgriciDaniel/claude-seo/pull/389",
         "merged_at": "2026-11-10T21:27:34Z"
+      }
+    },
+    {
+      "full_name": "HKUDS/DeepCode",
+      "html_url": "https://github.com/HKUDS/DeepCode",
+      "merged_pr_count": 1,
+      "latest_pr": {
+        "title": "fix(shell): explain command screen refusals accurately",
+        "number": 314,
+        "html_url": "https://github.com/HKUDS/DeepCode/pull/314",
+        "merged_at": "2026-11-23T08:29:40Z"
       }
     },
     {
