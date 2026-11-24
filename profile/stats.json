@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-11-23 19:12 UTC+8",
+  "updated_at": "2026-11-24 17:58 UTC+8",
   "summary": {
-    "merged_prs": 16
+    "merged_prs": 17
   },
   "merged_prs_truncated": false,
   "merged_prs": [
+    {
+      "title": "fix(tui): match ShellExperienceHost image name",
+      "number": 7513,
+      "repository": "codewhale-hq/Codewhale",
+      "repository_url": "https://github.com/codewhale-hq/Codewhale",
+      "html_url": "https://github.com/codewhale-hq/Codewhale/pull/7513",
+      "merged_at": "2026-11-24T05:24:23Z"
+    },
     {
       "title": "fix(shell): explain command screen refusals accurately",
       "number": 314,
@@ -255,6 +263,17 @@
   ],
   "external_contributions": [
     {
+      "full_name": "codewhale-hq/Codewhale",
+      "html_url": "https://github.com/codewhale-hq/Codewhale",
+      "merged_pr_count": 3,
+      "latest_pr": {
+        "title": "fix(tui): match ShellExperienceHost image name",
+        "number": 7513,
+        "html_url": "https://github.com/codewhale-hq/Codewhale/pull/7513",
+        "merged_at": "2026-11-24T05:24:23Z"
+      }
+    },
+    {
       "full_name": "bojieli/ai-agent-book",
       "html_url": "https://github.com/bojieli/ai-agent-book",
       "merged_pr_count": 2,
@@ -274,17 +293,6 @@
         "number": 6469,
         "html_url": "https://github.com/career-ops-hq/career-ops/pull/6469",
         "merged_at": "2026-11-04T10:31:01Z"
-      }
-    },
-    {
-      "full_name": "codewhale-hq/Codewhale",
-      "html_url": "https://github.com/codewhale-hq/Codewhale",
-      "merged_pr_count": 2,
-      "latest_pr": {
-        "title": "Show request transmission on provider errors",
-        "number": 7448,
-        "html_url": "https://github.com/codewhale-hq/Codewhale/pull/7448",
-        "merged_at": "2026-11-21T10:11:21Z"
       }
     },
     {
