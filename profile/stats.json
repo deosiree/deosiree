@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-11-24 19:18 UTC+8",
+  "updated_at": "2026-11-25 16:41 UTC+8",
   "summary": {
-    "merged_prs": 17
+    "merged_prs": 18
   },
   "merged_prs_truncated": false,
   "merged_prs": [
+    {
+      "title": "feat: add refund status lookup agent",
+      "number": 15,
+      "repository": "munendra07-tech/agent-crashtest",
+      "repository_url": "https://github.com/munendra07-tech/agent-crashtest",
+      "html_url": "https://github.com/munendra07-tech/agent-crashtest/pull/15",
+      "merged_at": "2026-11-24T22:17:26Z"
+    },
     {
       "title": "fix(tui): match ShellExperienceHost image name",
       "number": 7513,
@@ -225,6 +233,15 @@
       "updated_at": "2026-10-28T02:58:41Z"
     },
     {
+      "name": "tinycode",
+      "full_name": "deosiree/tinycode",
+      "html_url": "https://github.com/deosiree/tinycode",
+      "description": "A minimal but complete Coding Agent Harness — learn how coding agents work by reading one. Built on Pi.",
+      "language": "TypeScript",
+      "stars": 1,
+      "updated_at": "2026-11-25T02:14:36Z"
+    },
+    {
       "name": "translationtool",
       "full_name": "deosiree/translationtool",
       "html_url": "https://github.com/deosiree/translationtool",
@@ -337,6 +354,17 @@
         "number": 2764,
         "html_url": "https://github.com/jackwener/OpenCLI/pull/2764",
         "merged_at": "2026-11-05T17:43:20Z"
+      }
+    },
+    {
+      "full_name": "munendra07-tech/agent-crashtest",
+      "html_url": "https://github.com/munendra07-tech/agent-crashtest",
+      "merged_pr_count": 1,
+      "latest_pr": {
+        "title": "feat: add refund status lookup agent",
+        "number": 15,
+        "html_url": "https://github.com/munendra07-tech/agent-crashtest/pull/15",
+        "merged_at": "2026-11-24T22:17:26Z"
       }
     },
     {
