@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-11-25 19:03 UTC+8",
+  "updated_at": "2026-11-26 16:25 UTC+8",
   "summary": {
-    "merged_prs": 18
+    "merged_prs": 19
   },
   "merged_prs_truncated": false,
   "merged_prs": [
+    {
+      "title": "fix(providers): use declared Responses thinking-off control",
+      "number": 8728,
+      "repository": "agentscope-ai/QwenPaw",
+      "repository_url": "https://github.com/agentscope-ai/QwenPaw",
+      "html_url": "https://github.com/agentscope-ai/QwenPaw/pull/8728",
+      "merged_at": "2026-11-26T06:04:45Z"
+    },
     {
       "title": "feat: add refund status lookup agent",
       "number": 15,
@@ -321,6 +329,17 @@
         "number": 613,
         "html_url": "https://github.com/iOfficeAI/OfficeCLI/pull/613",
         "merged_at": "2026-11-16T05:38:44Z"
+      }
+    },
+    {
+      "full_name": "agentscope-ai/QwenPaw",
+      "html_url": "https://github.com/agentscope-ai/QwenPaw",
+      "merged_pr_count": 1,
+      "latest_pr": {
+        "title": "fix(providers): use declared Responses thinking-off control",
+        "number": 8728,
+        "html_url": "https://github.com/agentscope-ai/QwenPaw/pull/8728",
+        "merged_at": "2026-11-26T06:04:45Z"
       }
     },
     {
