@@ -1,10 +1,26 @@
 {
-  "updated_at": "2026-11-26 16:25 UTC+8",
+  "updated_at": "2026-11-27 13:08 UTC+8",
   "summary": {
-    "merged_prs": 19
+    "merged_prs": 21
   },
   "merged_prs_truncated": false,
   "merged_prs": [
+    {
+      "title": "feat(sdk): add webhook signature verification",
+      "number": 16,
+      "repository": "Dicka18/mailgate",
+      "repository_url": "https://github.com/Dicka18/mailgate",
+      "html_url": "https://github.com/Dicka18/mailgate/pull/16",
+      "merged_at": "2026-11-27T03:05:38Z"
+    },
+    {
+      "title": "feat(mcp): add direct message lookup tool",
+      "number": 15,
+      "repository": "Dicka18/mailgate",
+      "repository_url": "https://github.com/Dicka18/mailgate",
+      "html_url": "https://github.com/Dicka18/mailgate/pull/15",
+      "merged_at": "2026-11-27T03:05:26Z"
+    },
     {
       "title": "fix(providers): use declared Responses thinking-off control",
       "number": 8728,
@@ -187,6 +203,15 @@
       "updated_at": "2026-10-28T02:55:59Z"
     },
     {
+      "name": "daily-report-generator",
+      "full_name": "deosiree/daily-report-generator",
+      "html_url": "https://github.com/deosiree/daily-report-generator",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 1,
+      "updated_at": "2026-11-26T10:30:33Z"
+    },
+    {
       "name": "deosiree.github.io",
       "full_name": "deosiree/deosiree.github.io",
       "html_url": "https://github.com/deosiree/deosiree.github.io",
@@ -318,6 +343,17 @@
         "number": 6469,
         "html_url": "https://github.com/career-ops-hq/career-ops/pull/6469",
         "merged_at": "2026-11-04T10:31:01Z"
+      }
+    },
+    {
+      "full_name": "Dicka18/mailgate",
+      "html_url": "https://github.com/Dicka18/mailgate",
+      "merged_pr_count": 2,
+      "latest_pr": {
+        "title": "feat(sdk): add webhook signature verification",
+        "number": 16,
+        "html_url": "https://github.com/Dicka18/mailgate/pull/16",
+        "merged_at": "2026-11-27T03:05:38Z"
       }
     },
     {
